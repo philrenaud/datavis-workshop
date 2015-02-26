@@ -1,0 +1,55 @@
+/*********************************************
+= Custom - Phil Renaud, 2014
+**********************************************/
+
+
+.slides section ul {
+  display: block;
+}
+
+.slides section ul li {
+  margin-bottom: 10px;
+}
+
+.acronym strong,
+.callout {
+  color: #00C2FF;
+}
+
+.acronym img {
+  border: none !important;
+}
+
+.reveal pre code {
+  max-height: 500px;
+}
+
+
+.reveal .gender-bars {
+  margin-bottom: 20px;
+  padding: 20px 20px 20px 0px;
+  background: #fff;
+}
+
+.reveal .gender-bars .line {
+  background: #ccc;
+  color: #444;
+  margin-bottom: 2px;
+  padding: 5px;
+  box-sizing: border-box;
+  width: 100%;
+  white-space: nowrap;
+  transition: .5s;
+}
+
+.reveal .youngs, .reveal .olds {
+display: block;
+letter-spacing: 0.05em;
+font-weight: 100;
+font-family: "League Gothic", Impact, sans-serif !important;
+text-transform: uppercase;
+width: 50%;
+text-align: center;
+float: left;
+padding-bottom: 25px;
+}

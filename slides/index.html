@@ -1,0 +1,681 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Designing Interactive Data Visualization - by @phil_renaud</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/beige.css" id="theme">
+		<link rel="stylesheet" href="css/custom.css">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Workshop <hr />Designing Interactive Data Visualization</h1>
+					<p>
+						<a href="http://twitter.com/phil_renaud" target="_blank">@phil_renaud</a>
+					</p>
+          <p>Slides: <a href="http://acadia.riot.industries/slides" target="_blank">acadia.riot.industries/slides/</a></p>
+          <p>Github Repo: <a href="https://github.com/philrenaud" target="_blank">github.com/philrenaud</a></p>
+				</section>
+
+				<section>
+					<h2>1. Why do we care about data visualization?</h2>
+				</section>
+
+				<section>
+					<h3>We're pretty good at recording data.</h3>
+					<p>Too good, probably.</p>
+					<ul>
+						<li class="fragment">On an average day, Twitter generates about 500 million tweets. That's about 15 times the number of books in the Library of Congress</li>
+						<li class="fragment">In August 2010, Eric Schmidt, former CEO of Google, said that between the beginning of time and 2003, humanity generated about 5 exabytes (5 x 10<sup><small>18</small></sup> bytes) of data.</li>
+						<li class="fragment">Now, we generate that much data roughly every 2 days.</li>
+					</ul>
+				</section>
+
+				<section>
+					<p>These mountains of data add up. We record much more data than we can possibly analyze 1:1 in a lifetime.</p>
+					<h3>Even when we aggregate data, it's not always clear what's going on.</h3>
+				</section>
+
+				<section>
+					<p>And this is sort of a bummer, because</p>
+					<h1>Data is only valuable when it's understood.</h1>
+				</section>
+
+				<section>
+					<h3>Anscombe's Quartet</h3>
+					<li>4 Datasets with nearly-identical statistical properties</li>
+					<img src="images/anscombe1.jpg" alt="Anscombe's Quartet" />
+				</section>
+
+				<section>
+					<h3>Anscombe's Quartet</h3>
+					<li>Upon visual analysis, could not be more distinct from one another.</li>
+					<img src="images/anscombe2.jpg" alt="Anscombe's Quartet" />
+				</section>
+
+				<section>
+					<h3>Statistical Detection of ... ?</h3>
+					<img src="images/elections-1.png" alt="Elections data" />
+					<p><small><a href="http://www.pnas.org/content/suppl/2012/09/21/1210722109.DCSupplemental/pnas.201210722SI.pdf#nameddest=ST4" target="_blank">source</a></small></p>
+				</section>
+
+				<section>
+					<h2>Statistical Detection of Election Fraud</h2>
+					<img src="images/elections-2.jpg" alt="Elections data" />
+					<p><small><a href="http://www.pnas.org/content/early/2012/09/20/1210722109.full.pdf+html" target="_blank">source</a></small></p>
+				</section>
+
+				<section>
+					<h3>Visualization lends meaning to raw data.</h3>
+				</section>
+
+				<section>
+					<h2>2. Data Journalism</h2>
+				</section>
+
+				<section>
+					<ul>
+						<li>In addition to recording data at an unprecedented rate, we've become very good at exposing it as well.</li>
+						<li class="fragment">City open-data policies, like <a href="https://www.halifaxopendata.ca/" target="_blank">Halifax Open Data</a></li>
+						<li class="fragment">Scientific data, like <a href="http://www.1000genomes.org/" target="_blank">The 1000 Genomes project</a></li>
+						<li class="fragment">APIs as interfaces to otherwise obfuscated data, like <a href="https://github.com/censusreporter/censusreporter" target="_blank">Census Reporter</a></li>
+						<li class="fragment">Github repositories of data behind investigative news, like  <a href="https://github.com/fivethirtyeight/data" target="_blank">FiveThirtyEight's Data</a></li>
+					</ul>
+				</section>
+
+				<section>
+					<ul>
+						<li>This access provides us with the means to think critically about the world around us.</li>
+						<li class="fragment">If you know even basic spreadsheet use, you can start using the aforementioned data to research the subject of your choice.
+					</ul>
+				</section>
+
+				<section>
+					<ul>
+						<li>Journalists have taken this to its logical next-step: Data-Driven investigative journalism.</li>
+						<img class="fragment" src="images/538.jpg" alt="FiveThirtyEight" style="float: right; margin-left: 50px;" />
+						<li class="fragment">Sites like <a href="http://fivethirtyeight.com" target="b0ank">FiveThirtyEight</a> and NYTimes' <a href="http://www.nytimes.com/upshot" target="blank">The Upshot</a> give us ways to think about their data.</li>
+					</ul>
+				</section>
+
+				<section>
+					<ul>
+						<li>In the absence of the ability to code and analyze the information ourselves, Data-Driven Journalism sites do us a great service when they provide methods for us to interact with their data.</li>
+						<li class="fragment">A mainstay of Data Journalism is the pairing of a story with the understanding that a reader's interpretation of it may differ.</li>
+						<li class="fragment">In practical terms, this means that the best data journalism allows the reader to sort, filter, combine and rearrange data through a visual interface.</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>3. Data as a means of Critical Thinking</h2>
+				</section>
+
+				<section>
+					<h3>Some people mislead in order to persuade.</h3>
+					<img class="fragment" src="images/lying_ad.jpg" alt="Shitty people, anyway." />
+					<p class="fragment">But they're jerks. Don't be a jerk.</p>
+					<p class="fragment">Persuade the right way: back your narrative up with data.</p>
+				</section>
+
+				<section>
+					<h2>Telling Data Stories is more about being able to answer questions than about telling a single narrative.</h2>
+					<p>(Data Science is not an Op-Ed piece)</p>
+				</section>
+
+
+				<section>
+					<h2>There are some very good reasons to use data / data visualization as an aid to critical thinking:</h2>
+				</section>
+
+				<section>
+					<h3>1. Some of our questions have conflicting answers.</h3>
+					<ul>
+						<li class="fragment">It is a foregone conclusion that someone selling you something has an unobjective bias toward their product.</li>
+						<li class="fragment">
+							<img src="images/glass.jpg" alt="Stephen Glass, New Republic" style="float: right; margin-left: 50px;" />
+							<p>In the name of persuasion, some sources are simply unreliable. Sometimes they look like the wrinkle ad from before. Other times they require analysis.</p>
+						</li>
+						<li class="fragment">Data lets us explore, lets us fact-check.</li>
+					</ul>
+					<br />
+					<h3 class="fragment">Data makes critical thinkers of us.</h3>
+				</section>
+
+				<section>
+					<h3>2. Sometimes we ask the wrong questions.</h3>
+					<ul>
+						<li class="fragment">We might ask "How many customers did you have in October?"</li>
+						<li class="fragment">We probably means "How many customers did you have in October, relative to September" or "relative to last October"</li>
+					</ul>
+					<br />
+					<h3 class="fragment">Data answers the questions we didn't know we had.</h3>
+				</section>
+
+				<section>
+					<h3>3. Sometimes the answer to a simple question is unsatisfying.</h3>
+					<ul>
+						<li class="fragment">Q: How many Californians relocated from outside the USA?</li>
+						<li class="fragment">A: About 28%</a>
+						<li class="fragment">Okay but...</li>
+						<li class="fragment">Q: Where do the other 78% come from?</li>
+						<li class="fragment">Q: What about Californians who leave? Where do they go?</li>
+						<li class="fragment">Q: How does this compare to last year? to 100 years ago?</li>
+						<li class="fragment">Q: How does this compare to the US as a whole? To any given state?</li>
+						<li class="fragment"><a href="http://www.nytimes.com/interactive/2014/08/13/upshot/where-people-in-each-state-were-born.html" target="_blank">nytimes.com/interactive/2014/08/13/upshot/where-people-in-each-state-were-born.html</a></li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>4. Sometimes there are many distinct narratives to explore.</h3>
+					<ul>
+						<li><a href="http://www.nytimes.com/interactive/2014/10/27/us/is-the-affordable-care-act-working.html" target="_blank">nytimes.com/interactive/2014/10/27/us/is-the-affordable-care-act-working.html</a></li>
+					</ul>
+					<br />
+					<h3>Data makes critical thinkers of us all</h3>
+				</section>
+
+
+
+				<section>
+					<h2>4. Static Data Visualization: <br />Best Practices</h2>
+				</section>
+
+				<section>
+					<li>In terms of static data visualization, we've been working at this for a long time. From 1910:</li>
+					<img src="images/rules.jpg" alt="Properties of Visual Encodings" />
+				</section>
+
+				<section>
+					<li>Good data design adheres to the properties of the visual encodings it uses</li>
+					<img src="images/properties.jpg" alt="Properties of Visual Encodings" />
+				</section>
+
+				<section>
+					<ul>
+						<li>Certain types of visualizations are well-suited to particular data types:</li>
+					</ul>
+				</section>
+
+				<section>
+					<ul>
+						<li>Bar charts are boring, but well-suited to allow us to quickly determine differences in quantity:</li>
+						<img src="images/bar.jpg" alt="Bar Chart" />
+						<li class="fragment">Sometimes pie graphs are okay for this too, but be warned: at a glance, people don't see area, they see height.</li>
+					</ul>
+				</section>
+
+				<section>
+					<ul>
+						<li>Treemaps show quantity, plus a sense of hierarchy</li>
+						<img src="images/tree.jpg" alt="Tree Chart" />
+					</ul>
+				</section>
+
+				<section>
+					<ul>
+						<li>Maps provide several ways to show physical location.</li>
+						<img src="images/map.jpg" alt="Heatmap" style="float: left;" />
+						<img src="images/map2.jpg" alt="Pizza in Halifax" style="float: left; width: 50%; margin-left: 10px; " />
+					</ul>
+				</section>
+
+				<section>
+					<ul>
+						<li>Maps are particularly versatile because of our common understanding of their expected shape; differences from our expectations let us see a different kind of story:</li>
+						<img src="images/cartogram.jpg" alt="cartogram" />
+						<li>This cartogram shows expected popularion by 2300. It is only by changing our previous knowledge of the shape of the world that this has any effect.</li>
+					</ul>
+				</section>
+
+				<section>
+					<ul>
+						<li>Time-Series charts show how quantitative values change over time:</li>
+						<img src="images/timeseries.jpg" alt="Timeseries" />
+					</ul>
+				</section>
+
+				<section>
+					<ul>
+						<li>Scatter plots show us the differences between things in two dimensions</li>
+						<img src="images/scatter.jpg" alt="scatter plot" />
+					</ul>
+				</section>
+
+				<section>
+					<ul>
+						<li>Network graphs show us the relationships between things - for example, this map of all of the followers of @CollideHalifax</li>
+						<img src="images/network.jpg" alt="CollideHFX Network Graph" />
+					</ul>
+				</section>
+
+				<section>
+					<h2>5. The Qualities of Highly Successful Interactive Data Visulizations</h2>
+				</section>
+
+				<section>
+					<h3>The State of the Union in Context</h3>
+					<a href="http://benschmidt.org/poli/2015-SOTU" target="_blank">
+					<img src="images/sotu.jpg" alt="SOTU" />
+					<br /><span>source</span>
+					</a>
+					<a href="http://www.theatlantic.com/features/archive/2015/01/the-language-of-the-state-of-the-union/384575/" target="_blank">
+					<br /><span>source2</span>
+					</a>
+					<p>Bar Charts, Interactive</p>
+				</section>
+
+				<section>
+					<h3>The Guardian - The state of our union is ... dumber</h3>
+					<a href="http://www.theguardian.com/world/interactive/2013/feb/12/state-of-the-union-reading-level" target="_blank">
+					<img src="images/parsing.jpg" alt="Parsing" />
+					<br /><span>source</span>
+					</a>
+					<p>Scatter plot/ Time series, Small multiples. Allows user to parse and reveal.</p>
+				</section>
+
+				<section>
+					<h3>BBC: Scotland Decides</h3>
+					<a href="http://www.bbc.com/news/events/scotland-decides/results" target="_blank">
+					<img src="images/scotland.jpg" alt="Scotland Decides" />
+					<br /><span>source</span>
+					</a>
+					<p>Normalized bar chart, Map. Allows user to sort data.</p>
+				</section>
+
+				<section>
+					<h3>The Guardian - Violence and guns in best-selling video games</h3>
+					<a href="http://www.theguardian.com/world/interactive/2013/apr/30/violence-guns-best-selling-video-games" target="_blank">
+					<img src="images/guns.jpg" alt="Filtering" />
+					<br /><span>source</span>
+					</a>
+					<p>Radial Bar Graph with edge-bundling. Allows user to filter.</p>
+				</section>
+
+				<section>
+					<p>Quick aside: be considerate about how you categorize.</p>
+					<img src="images/categories.jpg" alt="Tomahawks" />
+				</section>
+
+				<section>
+					<h3>NPR - When are people working?</h3>
+					<a href="http://www.npr.org/blogs/money/2014/08/27/343415569/whos-in-the-office-the-american-workday-in-one-graph" target="_blank">
+					<img src="images/hours.jpg" alt="When are people working?" />
+					<br /><span>source</span>
+					</a>
+					<p>Area Graph. Allows user to visually compare.</p>
+				</section>
+
+				<section>
+					<h3>Musicians' Deaths by Age</h3>
+					<a href="http://geeksta.net/visualizations/age-musicians-die/" target="_blank">
+					<img src="images/musicians.jpg" alt="When do Musicians Die?" />
+					<br /><span>source</span>
+					</a>
+					<p>Time Series. Allows user to filter based on category.</p>
+				</section>
+
+				<section>
+					<h3>Bachelors Degrees by Demographics</h3>
+					<a href="http://gleap.org/static/special/degrees/viz.html" target="_blank">
+					<img src="images/bachelors.jpg" alt="Bachelors degrees" />
+					<br /><span>source</span>
+					</a>
+				</section>
+
+				<section>
+					<h3>Visualizing MBTA Data</h3>
+					<a href="http://mbtaviz.github.io/" target="_blank">
+					<img src="images/subway.jpg" alt="Visualizing MBTA Data" />
+					<br /><span>source</span>
+					</a>
+					<p>Parallel Coordinates, Maps, Bar and Area. Allows user to explore relative and absolute time, and compare stations/trains.</p>
+				</section>
+
+				<section>
+					<h3>NY Times: How the Recession Reshaped the Economy, in 255 Charts</h3>
+					<a href="http://www.nytimes.com/interactive/2014/06/05/upshot/how-the-recession-reshaped-the-economy-in-255-charts.html?abt=0002&abg=0" target="_blank">
+					<img src="images/recession.jpg" alt="Recession vs Economy" />
+					<br /><span>source</span>
+					</a>
+					<p>Loose interaction; the act of scrolling shows comparisons between industries. Sparklines. At the bottom, Small Multiples show the fuller picture.</p>
+				</section>
+
+				<section>
+					<h3>Bloomberg Visual Data: State-by-State</h3>
+					<a href="http://www.bloomberg.com/visual-data/state-by-state/" target="_blank">
+					<img src="images/bloomberg.jpg" alt="State by State" />
+					<br /><span>source</span>
+					</a>
+					<p>Map, Vertical Bar Chart, Time-Series. Allows user to dig deeper and cross-compare state data.</p>
+				</section>
+
+				<section>
+					<ul>
+						<li>The primary theme among the interactions presented here is that they allow users to complete a few common, basic actions:</li>
+						<li class="fragment"><strong>Sort</strong>: Representing the data in different orders can reveal trends otherwise unseen</li>
+						<li class="fragment"><strong>Filter</strong>: Only show the data that meets certain user-defined criteria</li>
+						<li class="fragment"><strong>Compare</strong>: Allow the user to take pieces of the whole and see how they relate.</li>
+					</ul>
+				</section>
+
+				<section>
+					<ul>
+						<li>Why do these visuals feel so compelling, compared to traditional static media, or data in chart format?</li>
+						<li class="fragment">The general pathway to understanding:
+							<ul>
+								<li class="fragment">Unstructured Information</li>
+								<li class="fragment">Data</li>
+								<li class="fragment">Structured Information</li>
+								<li class="fragment">Knowledge</li>
+								<li class="fragment">Wisdom</li>
+							</ul>
+						</li>
+						<li class="fragment">Visualization helps bridge the gap between Knowledge and Wisdom. Interactivity prompts exploration, and exploration leads to understanding.</li>
+						<li class="fragment">And smarter users = good for everyone.</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>6. Some common pratfalls of Data Visualization</h2>
+				</section>
+
+
+				<section>
+					<p>So, when I see a Visualization, can I be sure that the Data Story I'm being told is correct?</p>
+					<ul>
+						<li class="fragment">Not always! Be critical.</li>
+						<li class="fragment">Mark Twain's 3 kinds of lies:</li>
+					</ul>
+					<h3 class="fragment">"Lies, Damned Lies, and Statistics".</h3>
+					<img class="fragment" src="images/college1.jpg" alt="Data" style="float: left; margin-right: 50px;" />
+					<img class="fragment" src="images/college2.jpg" alt="Data" style="float: left;" />
+				</section>
+				<section>
+					<h2>Avoid these common deceptions when designing data stories:</h2>
+				</section>
+
+				<section>
+					<h3>1. Maps as population indicators</h3>
+					<img src="images/pops.jpg" alt="Populations" />
+					<p>NYC has ~ the same population as the shaded area</p>
+					<p><a href="http://www.slate.com/articles/life/culturebox/2014/10/population_map_use_our_interactive_map_to_figure_out_how_many_flyover_states.html" target="_blank">Slate's Equal Population Mapper</a></p>
+				</section>
+
+				<section>
+					<h3>2. Cumulative Time-Series Charts</h3>
+					<img class="fragment" src="images/tsc1.jpg" alt="Data" />
+					<img class="fragment" src="images/tsc2.jpg" alt="Data" />
+				</section>
+
+				<section>
+					<h3>3. Circles in general.</h3>
+					<h4>We're meant to see area; we commonly just see height.</h4>
+					<img class="fragment" src="images/circles.jpg" alt="Data" />
+				</section>
+
+				<section>
+					<h3>4. Pie charts when dealing with close values</h3>
+					<h4>(Bar charts are boring but we're really really good at reading them)</h4>
+					<img class="fragment" src="images/chartcompare.jpg" alt="Data" />
+				</section>
+
+				<section>
+					<h3>5. Bar charts with arbitrary axis points</h3>
+				</section>
+
+				<section>
+					<img src="images/axes.jpg" alt="Data" style="float: left; margin-right: 50px; width: 400px;" />
+					<img class="fragment" src="images/axes2.jpg" alt="Data" style="float: left; width: 400px" />
+				</section>
+
+
+				<section>
+					<h3>4. Seeing correlations when they're coincidental</h3>
+					<img class="fragment" src="images/spurious.jpg" alt="Spurious Correlations" />
+					<p><a href="http://www.tylervigen.com/" target="_blank">source</a></p>
+				</section>
+
+
+
+				<section>
+					<h2>7. In which we build something.</h2>
+				</section>
+
+				<section>
+					<p>Bar Charts, particularly ones with multivariate data, often a lot to be desired when they're static.</p>
+					<ul>
+						<li class="fragment">Example: <a href="http://i.imgur.com/GJ72Pp3.png" target="_blank">Monthly Expenses by % of Income</a></li>
+						<li class="fragment">Example: <a href="http://www.fangraphs.com/blogs/off-season-twitter-usage-among-mlb-teams/" target="_blank">Off-Season Twitter Usage Among MLB Teams</a></li>
+						<li class="fragment">Example: <a href="https://fivethirtyeight.com/features/lessons-for-ferguson-in-creating-a-diverse-police-department/" target="_blank">Police Force Diversity</a></li>
+					</ul>
+				</section>
+
+				<section>
+					<ul>
+						<li>Head over to <h3><a href="http://tinyurl.com/acadia-census" target="_blank">tinyurl.com/acadia-census</a></h3></li>
+						<li>In Chrome, open up your console - CMD + ALT + i</li>
+						<li>(or right-click and select "Inspect Element", then hit ESC)</li>
+						<li>In your text editor of choice, open up the project you downloaded from Github, then head to</li>
+						<h3>/js/acquiring_data.js</h3>
+					</ul>
+				</section>
+
+				<section>
+					<h1>&lt;Code Interlude&gt;</h1>
+				</section>
+
+				<section>
+					<h3>Open up:</h3>
+					<ul>
+						<li>In Chrome: /multivariate_data.html</li>
+						<li>In your text editor: /multivariate_data.html</li>
+						<li>In your text editor: /js/multivariate.js</li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>&lt;Intermission&gt;</h1>
+				</section>
+
+				<section>
+					<h1>&lt;/Intermission&gt;</h1>
+				</section>
+
+				<section>
+					<h3>Open up:</h3>
+					<ul>
+						<li>In Chrome: <a href="http://tinyurl.com/nba-win-chance" target="_blank">tinyurl.com/nba-win-chance</a></li>
+						<li>In Chrome: /series.html</li>
+						<li>In your text editor: /series.html</li>
+						<li>In your text editor: /js/lines.js</li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>&lt;Code Interlude&gt;</h1>
+				</section>
+
+				<section>
+					<h3>Bonus Round!</h3>
+					<ul>
+						<li>In Chrome: /network.html</li>
+						<li>In your text editor: /network.html</li>
+						<li>In your text editor: /js/network.js</li>
+					</ul>
+				</section>
+
+        <section>
+          <h3>Thanks!</h3>
+          <p><a href="http://twitter.com/phil_renaud" target="_blank">@phil_renaud</a></p>
+          <p>Slides: <a href="http://acadia.riot.industries/slides/" target="_blank">acadia.riot.industries/slides</a></p>
+          <p>Github Repo: <a href="https://github.com/philrenaud" target="_blank">github.com/philrenaud</a></p>
+        </section>
+
+        <section>
+          <h3>Bonus links:</h3>
+          <p><a target="_blank" href="https://medium.com/@jugoncalves/functional-programming-should-be-your-1-priority-for-2015-47dd4641d6b9">Functional Programming should be your #1 priority for 2015</a></p>
+          <p><a target="_blank" href="https://learningwithdata.wordpress.com/2015/02/06/quick-guide-to-making-an-interactive-d3-map/">Quick Guide to Making an Interactive D3 map</a></p>
+          <p><a target="_blank" href="https://github.com/WhiteHouse/2016-budget-data">Data for the The President's Fiscal Year 2016 Budget</a></p>
+          <p><a target="_blank" href="https://github.com/fivethirtyeight/data">538's Open Data</a></p>
+        </section>
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+
+
+			Reveal.initialize({
+
+
+
+    // Display controls in the bottom right corner
+    controls: true,
+
+    // Display a presentation progress bar
+    progress: true,
+
+    // Display the page number of the current slide
+    slideNumber: false,
+
+    // Push each slide change to the browser history
+    history: true,
+
+    // Enable keyboard shortcuts for navigation
+    keyboard: true,
+
+    // Enable the slide overview mode
+    overview: true,
+
+    // Vertical centering of slides
+    center: true,
+
+    // Enables touch navigation on devices with touch input
+    touch: true,
+
+    // Loop the presentation
+    loop: false,
+
+    // Change the presentation direction to be RTL
+    rtl: false,
+
+    // Turns fragments on and off globally
+    fragments: true,
+
+    // Flags if the presentation is running in an embedded mode,
+    // i.e. contained within a limited portion of the screen
+    embedded: false,
+
+    // Number of milliseconds between automatically proceeding to the
+    // next slide, disabled when set to 0, this value can be overwritten
+    // by using a data-autoslide attribute on your slides
+    autoSlide: 0,
+
+    // Stop auto-sliding after user input
+    autoSlideStoppable: true,
+
+    // Enable slide navigation via mouse wheel
+    mouseWheel: false,
+
+    // Hides the address bar on mobile devices
+    hideAddressBar: true,
+
+    // Opens links in an iframe preview overlay
+    previewLinks: false,
+
+    // Transition speed
+    transitionSpeed: 'fast', // default/fast/slow
+
+    // Transition style for full page slide backgrounds
+    backgroundTransition: 'default', // default/none/slide/concave/convex/zoom
+
+    // Number of slides away from the current that are visible
+    viewDistance: 3,
+
+    // Parallax background image
+    parallaxBackgroundImage: '', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
+
+    // Parallax background size
+    parallaxBackgroundSize: '', // CSS syntax, e.g. "2100px 900px"
+
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+  <!-- jQuery -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="/scripts/libs/jquery-2.0.3.min.js"><\/script>')</script>
+
+  <!-- Datavis -->
+  <script src="/scripts/libs/d3.v3.min.js" charset="utf-8"></script>
+  <script src="/scripts/libs/c3.js"></script>
+    <link rel="stylesheet" href="/assets/css/c3.css">    
+
+  <!-- Tools: Time and Data -->
+  <script src="/scripts/libs/moment.min.js"></script>
+  <script src="/scripts/libs/underscore-min.js"></script>
+
+  <!-- TODO: Grunt'd -->
+  <script src="/scripts/app.js"></script>
+
+
+	</body>
+</html>
