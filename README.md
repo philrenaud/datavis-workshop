@@ -1,5 +1,5 @@
 # Data Visualization Workshop
-# Acadia University, 26 Feb 2015
+## Acadia University, 26 Feb 2015
 ## [@phil_renaud](http://twitter.com/phil_renaud/)
 
 1. multivariate_data.html (Check out http://tinyurl.com/acadia-census)
