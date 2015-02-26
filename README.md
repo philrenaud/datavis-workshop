@@ -1,20 +1,16 @@
 # Data Visualization Workshop
 ## @phil_renaud
 
-1. multivariate_data.html
-- Check out http://www.census.gov/foreign-trade/statistics/product/enduse/exports/
+1. multivariate_data.html (Check out http://tinyurl.com/acadia-census)
 
-2. series.html
-- Check out http://fivethirtyeight.com/features/every-nba-teams-chance-of-winning-in-every-minute-across-every-game/
+2. series.html (Check out http://tinyurl.com/nba-win-chance)
 
 3. network.html
 
 # Requirements
 
-- Chrome internet browser
-
+- Chrome browser
 - A text editor, like Notepad or Sublime Text
-
 - That's it!
 
 
