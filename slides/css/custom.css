@@ -1,7 +1,10 @@
 /*********************************************
-= Custom - Phil Renaud, 2014
+= Custom - Phil Renaud, 2018
 **********************************************/
 
+.reveal h1 {
+  hyphens: none;
+}
 
 .slides section ul {
   display: block;
