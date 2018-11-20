@@ -1,5 +1,6 @@
 # Data Visualization Workshop
 ## Acadia University, 20 Nov 2018
-## [@phil_renaud](http://twitter.com/phil_renaud/)
+---
+## [Slides: acadia.riot.industries](http://acadia.riot.industries)
 
-## [Slides](http://acadia.riot.industries)
+## [by @phil_renaud](http://twitter.com/phil_renaud/)
