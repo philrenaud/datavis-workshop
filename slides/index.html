@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>Designing Interactive Data Visualization - by @phil_renaud</title>
+		<title>Building Data Visualizations on the Web - by @phil_renaud</title>
 
 		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
 		<meta name="author" content="Hakim El Hattab">
@@ -44,7 +44,7 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
-					<h1>Workshop <hr />Designing Interactive Data Visualization</h1>
+					<h1>Building Data Visualizations on the Web</h1>
 					<p>
 						<a href="http://twitter.com/phil_renaud" target="_blank">@phil_renaud</a>
 					</p>
@@ -76,6 +76,56 @@
 					<h1>Data is only valuable when it's understood.</h1>
 				</section>
 
+        <section>
+          <p>Even if you ignore problems that truly big data presents for our understanding, we still have a very strong case for the importance of Data Visualiation:</p>
+        </section>
+
+				<section>
+					<h3>A: Some of our questions have conflicting answers.</h3>
+					<ul>
+						<li class="fragment">It is a foregone conclusion that someone selling you something has an unobjective bias toward their product.</li>
+						<li class="fragment">The climate of most commonly-shared news sources online is one of commodified viewership. Your attention is what's being bought.</li>
+						<li class="fragment">In the name of persuasion, some sources are simply unreliable -- they require analysis.</li>
+						<li class="fragment">Data lets us explore, lets us fact-check. Visualization of this data lets us do that in an accessible way.</li>
+					</ul>
+					<br />
+					<h3 class="fragment">Data makes critical thinkers of us.</h3>
+				</section>
+
+				<section>
+					<h3>B: Sometimes we ask the wrong questions.</h3>
+					<ul>
+						<li class="fragment">We might ask "How many votes did the candidate receive?"</li>
+            <li class="fragment">We probably mean "How many votes did the candidate receive, relative to Other Candidate"</li>
+            <li class="fragment">Or, if we're trend-watching, "relative to their total from the last election", etc.</li>
+					</ul>
+					<br />
+					<h3 class="fragment">Data answers the questions we didn't know we had.</h3>
+				</section>
+
+				<section>
+					<h3>C: Sometimes the answer to a simple question is unsatisfying.</h3>
+					<ul>
+						<li class="fragment">Q: How many Californians relocated from outside the USA?</li>
+						<li class="fragment">A: About 28%</a>
+						<li class="fragment">Okay but...</li>
+						<li class="fragment">Q: Where do the other 78% come from?</li>
+						<li class="fragment">Q: What about Californians who leave? Where do they go?</li>
+						<li class="fragment">Q: How does this compare to last year? to 100 years ago?</li>
+						<li class="fragment">Q: How does this compare to the US as a whole? To any given state?</li>
+						<li class="fragment"><a href="http://www.nytimes.com/interactive/2014/08/13/upshot/where-people-in-each-state-were-born.html" target="_blank">nytimes.com/interactive/2014/08/13/upshot/where-people-in-each-state-were-born.html</a></li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>D: Sometimes there are many distinct narratives to explore.</h3>
+					<ul>
+						<li><a href="https://projects.fivethirtyeight.com/trump-approval-ratings/" target="_blank">projects.fivethirtyeight.com/trump-approval-ratings</a></li>
+					</ul>
+					<br />
+					<h3>Data makes critical thinkers of us all</h3>
+				</section>
+
 				<section>
 					<h3>Anscombe's Quartet</h3>
 					<li>4 Datasets with nearly-identical statistical properties</li>
@@ -104,115 +154,8 @@
 					<h3>Visualization lends meaning to raw data.</h3>
 				</section>
 
-				<section>
-					<h2>2. Data Journalism</h2>
-				</section>
-
-				<section>
-					<ul>
-						<li>In addition to recording data at an unprecedented rate, we've become very good at exposing it as well.</li>
-						<li class="fragment">City open-data policies, like <a href="https://www.halifaxopendata.ca/" target="_blank">Halifax Open Data</a></li>
-						<li class="fragment">Scientific data, like <a href="http://www.1000genomes.org/" target="_blank">The 1000 Genomes project</a></li>
-						<li class="fragment">APIs as interfaces to otherwise obfuscated data, like <a href="https://github.com/censusreporter/censusreporter" target="_blank">Census Reporter</a></li>
-						<li class="fragment">Github repositories of data behind investigative news, like  <a href="https://github.com/fivethirtyeight/data" target="_blank">FiveThirtyEight's Data</a></li>
-					</ul>
-				</section>
-
-				<section>
-					<ul>
-						<li>This access provides us with the means to think critically about the world around us.</li>
-						<li class="fragment">If you know even basic spreadsheet use, you can start using the aforementioned data to research the subject of your choice.
-					</ul>
-				</section>
-
-				<section>
-					<ul>
-						<li>Journalists have taken this to its logical next-step: Data-Driven investigative journalism.</li>
-						<img class="fragment" src="images/538.jpg" alt="FiveThirtyEight" style="float: right; margin-left: 50px;" />
-						<li class="fragment">Sites like <a href="http://fivethirtyeight.com" target="b0ank">FiveThirtyEight</a> and NYTimes' <a href="http://www.nytimes.com/upshot" target="blank">The Upshot</a> give us ways to think about their data.</li>
-					</ul>
-				</section>
-
-				<section>
-					<ul>
-						<li>In the absence of the ability to code and analyze the information ourselves, Data-Driven Journalism sites do us a great service when they provide methods for us to interact with their data.</li>
-						<li class="fragment">A mainstay of Data Journalism is the pairing of a story with the understanding that a reader's interpretation of it may differ.</li>
-						<li class="fragment">In practical terms, this means that the best data journalism allows the reader to sort, filter, combine and rearrange data through a visual interface.</li>
-					</ul>
-				</section>
-
-				<section>
-					<h2>3. Data as a means of Critical Thinking</h2>
-				</section>
-
-				<section>
-					<h3>Some people mislead in order to persuade.</h3>
-					<img class="fragment" src="images/lying_ad.jpg" alt="Shitty people, anyway." />
-					<p class="fragment">But they're jerks. Don't be a jerk.</p>
-					<p class="fragment">Persuade the right way: back your narrative up with data.</p>
-				</section>
-
-				<section>
-					<h2>Telling Data Stories is more about being able to answer questions than about telling a single narrative.</h2>
-					<p>(Data Science is not an Op-Ed piece)</p>
-				</section>
-
-
-				<section>
-					<h2>There are some very good reasons to use data / data visualization as an aid to critical thinking:</h2>
-				</section>
-
-				<section>
-					<h3>1. Some of our questions have conflicting answers.</h3>
-					<ul>
-						<li class="fragment">It is a foregone conclusion that someone selling you something has an unobjective bias toward their product.</li>
-						<li class="fragment">
-							<img src="images/glass.jpg" alt="Stephen Glass, New Republic" style="float: right; margin-left: 50px;" />
-							<p>In the name of persuasion, some sources are simply unreliable. Sometimes they look like the wrinkle ad from before. Other times they require analysis.</p>
-						</li>
-						<li class="fragment">Data lets us explore, lets us fact-check.</li>
-					</ul>
-					<br />
-					<h3 class="fragment">Data makes critical thinkers of us.</h3>
-				</section>
-
-				<section>
-					<h3>2. Sometimes we ask the wrong questions.</h3>
-					<ul>
-						<li class="fragment">We might ask "How many customers did you have in October?"</li>
-						<li class="fragment">We probably means "How many customers did you have in October, relative to September" or "relative to last October"</li>
-					</ul>
-					<br />
-					<h3 class="fragment">Data answers the questions we didn't know we had.</h3>
-				</section>
-
-				<section>
-					<h3>3. Sometimes the answer to a simple question is unsatisfying.</h3>
-					<ul>
-						<li class="fragment">Q: How many Californians relocated from outside the USA?</li>
-						<li class="fragment">A: About 28%</a>
-						<li class="fragment">Okay but...</li>
-						<li class="fragment">Q: Where do the other 78% come from?</li>
-						<li class="fragment">Q: What about Californians who leave? Where do they go?</li>
-						<li class="fragment">Q: How does this compare to last year? to 100 years ago?</li>
-						<li class="fragment">Q: How does this compare to the US as a whole? To any given state?</li>
-						<li class="fragment"><a href="http://www.nytimes.com/interactive/2014/08/13/upshot/where-people-in-each-state-were-born.html" target="_blank">nytimes.com/interactive/2014/08/13/upshot/where-people-in-each-state-were-born.html</a></li>
-					</ul>
-				</section>
-
-				<section>
-					<h3>4. Sometimes there are many distinct narratives to explore.</h3>
-					<ul>
-						<li><a href="http://www.nytimes.com/interactive/2014/10/27/us/is-the-affordable-care-act-working.html" target="_blank">nytimes.com/interactive/2014/10/27/us/is-the-affordable-care-act-working.html</a></li>
-					</ul>
-					<br />
-					<h3>Data makes critical thinkers of us all</h3>
-				</section>
-
-
-
-				<section>
-					<h2>4. Static Data Visualization: <br />Best Practices</h2>
+        <section>
+					<h2>2. Different tools for different jobs</h2>
 				</section>
 
 				<section>
@@ -281,10 +224,79 @@
 						<li>Network graphs show us the relationships between things - for example, this map of all of the followers of @CollideHalifax</li>
 						<img src="images/network.jpg" alt="CollideHFX Network Graph" />
 					</ul>
+        </section>
+        
+				<section>
+					<h2>3. Some common problems to avoid</h2>
 				</section>
 
 				<section>
-					<h2>5. The Qualities of Highly Successful Interactive Data Visulizations</h2>
+					<p>So, when I see a Visualization, can I be sure that the Data Story I'm being told is correct?</p>
+					<ul>
+						<li class="fragment">Not always! Be critical.</li>
+						<li class="fragment">Mark Twain's 3 kinds of lies:</li>
+					</ul>
+					<h3 class="fragment">"Lies, Damned Lies, and Statistics".</h3>
+					<img class="fragment" src="images/college1.jpg" alt="Data" style="float: left; margin-right: 50px;" />
+					<img class="fragment" src="images/college2.jpg" alt="Data" style="float: left;" />
+				</section>
+				<section>
+					<h2>Avoid these common deceptions when designing data stories:</h2>
+				</section>
+
+				<section>
+					<h3>A: Maps as population indicators</h3>
+					<img src="images/pops.jpg" alt="Populations" />
+					<p>NYC has ~ the same population as the shaded area</p>
+					<p><a href="http://www.slate.com/articles/life/culturebox/2014/10/population_map_use_our_interactive_map_to_figure_out_how_many_flyover_states.html" target="_blank">Slate's Equal Population Mapper</a></p>
+				</section>
+
+				<section>
+					<h3>An aside: <em>"The Map is not the Territory"</em> -Alfred Korzybski</h3>
+					<ul>
+						<li class="fragment">Geographic maps are often particularly tricky to parse correctly, because we have an innate desire to see territory when we want to see attributes <strong>of</strong> that territory.</li>
+            <li class="fragment">Consider the many different ways one can represent the same map:</li>
+            <li class="fragment"><a href="http://nymag.com/intelligencer/2018/03/a-new-2016-election-voting-map-promotes-subtlety.html" target="_blank">nymag.com/intelligencer/2018/03/a-new-2016-election-voting-map-promotes-subtlety.html</a></li>
+            <li class="fragment"><a href="https://www.nytimes.com/interactive/2018/11/06/us/elections/results-house-elections.html" target="_blank">nytimes.com/interactive/2018/11/06/us/elections/results-house-elections.html</a></li>
+            <li class="fragment"><a href="https://xkcd.com/1939/" target="_blank">xkcd.com/1939/</a></li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>B: Cumulative Time-Series Charts</h3>
+					<img class="fragment" src="images/tsc1.jpg" alt="Data" />
+					<img class="fragment" src="images/tsc2.jpg" alt="Data" />
+				</section>
+
+				<section>
+					<h3>C: Circles in general.</h3>
+					<h4>We're meant to see area; we commonly just see height.</h4>
+					<img class="fragment" src="images/circles.jpg" alt="Data" />
+				</section>
+
+				<section>
+					<h3>D: Pie charts when dealing with close values</h3>
+					<h4>(Bar charts are boring but we're really really good at reading them)</h4>
+					<img class="fragment" src="images/chartcompare.jpg" alt="Data" />
+				</section>
+
+				<section>
+					<h3>E: Bar charts with arbitrary axis points</h3>
+				</section>
+
+				<section>
+					<img src="images/axes.jpg" alt="Data" style="float: left; margin-right: 50px; width: 400px;" />
+					<img class="fragment" src="images/axes2.jpg" alt="Data" style="float: left; width: 400px" />
+				</section>
+
+				<section>
+					<h3>F: Seeing correlations when they're coincidental</h3>
+					<img class="fragment" src="images/spurious.jpg" alt="Spurious Correlations" />
+					<p><a href="http://www.tylervigen.com/" target="_blank">source</a></p>
+				</section>
+
+				<section>
+					<h2>4. Notable Interactive Visualizations and what makes them Great</h2>
 				</section>
 
 				<section>
@@ -300,12 +312,12 @@
 				</section>
 
 				<section>
-					<h3>The Guardian - The state of our union is ... dumber</h3>
-					<a href="http://www.theguardian.com/world/interactive/2013/feb/12/state-of-the-union-reading-level" target="_blank">
-					<img src="images/parsing.jpg" alt="Parsing" />
+					<h3>Casting Shakespeare</h3>
+					<a href="https://ericwilliamlin.com/shakespeare_production_data/" target="_blank">
+					<img src="images/shakespeare.png" alt="Shakespeare" />
 					<br /><span>source</span>
 					</a>
-					<p>Scatter plot/ Time series, Small multiples. Allows user to parse and reveal.</p>
+					<p>Scatter plot/ Time series, Scrolling narrative.</p>
 				</section>
 
 				<section>
@@ -317,21 +329,7 @@
 					<p>Normalized bar chart, Map. Allows user to sort data.</p>
 				</section>
 
-				<section>
-					<h3>The Guardian - Violence and guns in best-selling video games</h3>
-					<a href="http://www.theguardian.com/world/interactive/2013/apr/30/violence-guns-best-selling-video-games" target="_blank">
-					<img src="images/guns.jpg" alt="Filtering" />
-					<br /><span>source</span>
-					</a>
-					<p>Radial Bar Graph with edge-bundling. Allows user to filter.</p>
-				</section>
-
-				<section>
-					<p>Quick aside: be considerate about how you categorize.</p>
-					<img src="images/categories.jpg" alt="Tomahawks" />
-				</section>
-
-				<section>
+        <section>
 					<h3>NPR - When are people working?</h3>
 					<a href="http://www.npr.org/blogs/money/2014/08/27/343415569/whos-in-the-office-the-american-workday-in-one-graph" target="_blank">
 					<img src="images/hours.jpg" alt="When are people working?" />
@@ -376,15 +374,6 @@
 				</section>
 
 				<section>
-					<h3>Bloomberg Visual Data: State-by-State</h3>
-					<a href="http://www.bloomberg.com/visual-data/state-by-state/" target="_blank">
-					<img src="images/bloomberg.jpg" alt="State by State" />
-					<br /><span>source</span>
-					</a>
-					<p>Map, Vertical Bar Chart, Time-Series. Allows user to dig deeper and cross-compare state data.</p>
-				</section>
-
-				<section>
 					<ul>
 						<li>The primary theme among the interactions presented here is that they allow users to complete a few common, basic actions:</li>
 						<li class="fragment"><strong>Sort</strong>: Representing the data in different orders can reveal trends otherwise unseen</li>
@@ -411,133 +400,272 @@
 				</section>
 
 				<section>
-					<h2>6. Some common pratfalls of Data Visualization</h2>
+          <h1>&lt;Intermission&gt;</h1>
+          <h3>(When we come back: D3, Observable, and Gephi)</h3>
 				</section>
 
+				<section>
+          <h1>&lt;/Intermission&gt;</h1>
+				</section>
 
 				<section>
-					<p>So, when I see a Visualization, can I be sure that the Data Story I'm being told is correct?</p>
+					<h2>5. Little Data Lab</h2>
+				</section>
+
+        <section>
+					<p>What's your preferred code editor?</p>
 					<ul>
-						<li class="fragment">Not always! Be critical.</li>
-						<li class="fragment">Mark Twain's 3 kinds of lies:</li>
+						<li class="fragment">Sublime Text?</li>
+						<li class="fragment">Visual Studio?</li>
+						<li class="fragment">Eclipse?</li>
+						<li class="fragment">Vim?</li>
+						<li class="fragment">R Studio?</li>
+						<li class="fragment">What about Chrome?</li>
 					</ul>
-					<h3 class="fragment">"Lies, Damned Lies, and Statistics".</h3>
-					<img class="fragment" src="images/college1.jpg" alt="Data" style="float: left; margin-right: 50px;" />
-					<img class="fragment" src="images/college2.jpg" alt="Data" style="float: left;" />
-				</section>
-				<section>
-					<h2>Avoid these common deceptions when designing data stories:</h2>
 				</section>
 
 				<section>
-					<h3>1. Maps as population indicators</h3>
-					<img src="images/pops.jpg" alt="Populations" />
-					<p>NYC has ~ the same population as the shaded area</p>
-					<p><a href="http://www.slate.com/articles/life/culturebox/2014/10/population_map_use_our_interactive_map_to_figure_out_how_many_flyover_states.html" target="_blank">Slate's Equal Population Mapper</a></p>
-				</section>
-
-				<section>
-					<h3>2. Cumulative Time-Series Charts</h3>
-					<img class="fragment" src="images/tsc1.jpg" alt="Data" />
-					<img class="fragment" src="images/tsc2.jpg" alt="Data" />
-				</section>
-
-				<section>
-					<h3>3. Circles in general.</h3>
-					<h4>We're meant to see area; we commonly just see height.</h4>
-					<img class="fragment" src="images/circles.jpg" alt="Data" />
-				</section>
-
-				<section>
-					<h3>4. Pie charts when dealing with close values</h3>
-					<h4>(Bar charts are boring but we're really really good at reading them)</h4>
-					<img class="fragment" src="images/chartcompare.jpg" alt="Data" />
-				</section>
-
-				<section>
-					<h3>5. Bar charts with arbitrary axis points</h3>
-				</section>
-
-				<section>
-					<img src="images/axes.jpg" alt="Data" style="float: left; margin-right: 50px; width: 400px;" />
-					<img class="fragment" src="images/axes2.jpg" alt="Data" style="float: left; width: 400px" />
-				</section>
-
-
-				<section>
-					<h3>4. Seeing correlations when they're coincidental</h3>
-					<img class="fragment" src="images/spurious.jpg" alt="Spurious Correlations" />
-					<p><a href="http://www.tylervigen.com/" target="_blank">source</a></p>
-				</section>
-
-
-
-				<section>
-					<h2>7. In which we build something.</h2>
-				</section>
-
-				<section>
-					<p>Bar Charts, particularly ones with multivariate data, often a lot to be desired when they're static.</p>
+					<p>A skill that data scientists often underdevelop is the ability to derive meaning from data <strong>on the fly</strong>.</p>
 					<ul>
-						<li class="fragment">Example: <a href="http://i.imgur.com/GJ72Pp3.png" target="_blank">Monthly Expenses by % of Income</a></li>
-						<li class="fragment">Example: <a href="http://www.fangraphs.com/blogs/off-season-twitter-usage-among-mlb-teams/" target="_blank">Off-Season Twitter Usage Among MLB Teams</a></li>
-						<li class="fragment">Example: <a href="https://fivethirtyeight.com/features/lessons-for-ferguson-in-creating-a-diverse-police-department/" target="_blank">Police Force Diversity</a></li>
+						<li class="fragment">Sometimes you don't have your ideal tools available</li>
+						<li class="fragment">Even if you did, sometimes the person to whom you're telling a data story, doesn't understand your raw data.</li>
+						<li class="fragment">We're going to use one of the most maligned programming languages, Javascript, to build an on-the-fly data visualization toolkit</li>
+						<li class="fragment">Time to open some tabs!</li>
 					</ul>
 				</section>
 
 				<section>
 					<ul>
-						<li>Head over to <h3><a href="http://tinyurl.com/acadia-census" target="_blank">tinyurl.com/acadia-census</a></h3></li>
-						<li>In Chrome, open up your console - CMD + ALT + i</li>
+						<li>Head over to <h3><a href="https://tinyurl.com/acadia-import" target="_blank">tinyurl.com/acadia-import</a></h3></li>
+						<li>Copy the import code</li>
+					</ul>
+				</section>
+
+				<section>
+					<ul>
+						<li>When you have that copied, head over to <h3><a href="https://tinyurl.com/acadia-trade" target="_blank">tinyurl.com/acadia-trade</a></h3></li>
+						<li>Open up your Chrome dev tools console - CMD + ALT + i</li>
 						<li>(or right-click and select "Inspect Element", then hit ESC)</li>
-						<li>In your text editor of choice, open up <a href="https://github.com/philrenaud/datavis-workshop" target="_blank">the project you downloaded from Github</a>, then head to</li>
-						<h3>/js/acquiring_data.js</h3>
+						<li>Paste in your import code from tinyurl.com/acadia-import and hit enter</li>
+						<li class="fragment">Congratulations! You now have access to a very advanced data visualization toolkit.</li>
 					</ul>
 				</section>
 
-				<section>
-					<h1>&lt;Code Interlude&gt;</h1>
-				</section>
+        <section>
+            <h4>Aside: making Chrome Dev Tools more comfortable</h4>
+            <ul>
+              <li class="fragment">You can return clear your history with <code>cmd + k</code></li>
+              <li class="fragment">You can revisit previous history with <code>↑</code></li>
+              <li class="fragment">You can access a control panel with <code>cmd + shift + p</code> <br />(try typing <strong>theme</strong>)</li>
+            </ul>
+        </section>
 
-				<section>
-					<h3>Open up:</h3>
+        <section>
+          <h4>Aside: making Chrome Dev Tools more comfortable</h4>
 					<ul>
-						<li>In Chrome: /multivariate_data.html</li>
-						<li>In your text editor: /multivariate_data.html</li>
-						<li>In your text editor: /js/multivariate.js</li>
-					</ul>
+              <li>Try declaring a simple array:</li>
+              <pre><code data-trim style="font-size: 20px;">
+thing = [5, 10, 15];
+              </code></pre>      
+              <li>Use console.table(thing) to see a manipulable interface:</li>
+              <pre><code data-trim style="font-size: 20px;">
+console.table(thing);
+              </code></pre>
+              <li>You can do the same with an object, or an array of objects, or... mostly anything!</li>
+            </ul>
 				</section>
-
+  
 				<section>
-					<h1>&lt;Intermission&gt;</h1>
-				</section>
-
-				<section>
-					<h1>&lt;/Intermission&gt;</h1>
-				</section>
-
-				<section>
-					<h3>Open up:</h3>
+          <h3>Okay, back to it.</h3>
+          <h3>Here's what you've just added to this page:</h3>
 					<ul>
-						<li>In Chrome: <a href="http://tinyurl.com/nba-win-chance" target="_blank">tinyurl.com/nba-win-chance</a></li>
-						<li>In Chrome: /series.html</li>
-						<li>In your text editor: /series.html</li>
-						<li>In your text editor: /js/lines.js</li>
-					</ul>
+					  <li class="fragment">jQuery: document traversal and manipulation. “What’s the parent element of the first table?"</li>
+					  <li class="fragment">Underscore.js: Data manipulation and parsing. “What’s the total of the values in this array?"</li>
+					  <li class="fragment">D3.js: Data-as-a-document and visualization. “Plot the min and max values as colors on the red-to-green scale"</li>
+				  </ul>
 				</section>
 
 				<section>
-					<h1>&lt;Code Interlude&gt;</h1>
+					<h3>Let's try manipulating our data table.</h3>
+					<p>A sample excercise: Use jQuery to find a given cell and change its background color</p>
+          <pre><code data-trim style="font-size: 20px;">
+						$('td').eq(150).css('background-color', 'yellow')
+					</code></pre>
 				</section>
 
 				<section>
-					<h3>Bonus Round!</h3>
+					<p>"Which year had the highest total imports?"</p>
+					<p>jQuery: Show me the all the <td> elements in the last row:</p>
+          <pre><code data-trim style="font-size: 20px;">
+						$('tr:last-child td')
+					</code></pre>
+					<div class="fragment">
+					<p>Okay! Underscore: what's the lowest value among their them?</p>
+					<pre><code data-trim style="font-size: 20px;">
+lowVal = _.min(
+  $('tr:last-child td'), function(obj,iter){
+    return $(obj).text().replace(/,/g,'')
+  }
+)
+		      </code></pre>
+					<p>jQuery, highlight it:</p>
+					<pre><code data-trim style="font-size: 20px;">
+						$(lowVal).css('background-color','yellow')
+		      </code></pre>
+
+		      <p>Pre-made snippet for you: <h3><a href="https://tinyurl.com/acadia-gist1" target="_blank">tinyurl.com/acadia-gist1</a></h3></p>
+					</div>
+				</section>
+
+				<section>
+					<p>Let's build on this. Let's highlight the import trends of each product from year to year.</p>
+					<p class="fragment">Let's iterate (map) over each row (product) and:</p>
 					<ul>
-						<li>In Chrome: /network.html</li>
-						<li>In your text editor: /network.html</li>
-						<li>In your text editor: /js/network.js</li>
+						<li class="fragment">1. figure out the min and max values</li>
+						<li class="fragment">2. use D3 to paint the min values red, max values green, and scale the in-between accordingly</li>
+						<li class="fragment">3. Iterate (map) over each cell in the row and paint its background according to where it sits in the d3 domain</li>
 					</ul>
 				</section>
+
+				<section>
+          <pre><code data-trim style="font-size: 20px; width: 100%;">
+$('tr').map(function(iter,row){
+  var max = _.max($(row).children('td').map(function(iter,cell){  return $(cell).text().replace(/,/g,'') }))
+  var min = _.min($(row).children('td').map(function(iter,cell){  return $(cell).text().replace(/,/g,'') }))
+  var color = d3.scale.linear()
+    .domain([min, max])
+    .range(["#c33", "#0fc"]);
+  $(this).children('td').map(function(iter,cell){
+    $(cell).css('background-color', color($(cell).text().replace(/,/g,'')))
+  })
+})
+					</code></pre>
+		      <p>Pre-made snippet for you: <h3><a href="http://tinyurl.com/acadia-gist2" target="_blank">tinyurl.com/acadia-gist2</a></h3></p>
+				</section>
+
+				<section>
+					<p>Other countries to experiment with: <h3><a href="http://tinyurl.com/acadia-trade-all" target="_blank">tinyurl.com/acadia-trade-all</a></h3></p>
+					<p>Some observations:</p>
+					<ul>
+						<li>2009: obvious downturn across almost all industries</li>
+						<li>Looking for a common exception? ctrl+f "Pharma" in almost every major country</li>
+						<li>Canada/Mexico: Food up, household goods down.</li>
+						<li>China: almost everything up</li>
+						<li>Iraq: the year before the US unilaterally pulled out of the war, almost all industries had an uptick</li>
+						<li>Haiti: noteable uptick in textiles (cotton, wool)</li>
+						<li>Syria: downtick across the board</li>
+						<li>Egypt: Fuel and Natural Gas dropped off the face of the earth</li>
+						<li>Belize: Fruits are down, vegetables are up (Thanks, paleo diet!)</li>
+					</ul>
+
+				</section>
+
+
+				<section>
+					<h3>Other visualizations, other data types</h3>
+					<p>Let's build a bar chart over columnar data</p>
+					<h3><a href="https://tinyurl.com/acadia-baseball" target="_blank">tinyurl.com/acadia-baseball</a></h3>
+					<ul>
+						<li>Open up your Chrome dev tools console - CMD + ALT + i</li>
+						<li>(or right-click and select "Inspect Element", then hit ESC)</li>
+						<li>Paste in your import code from <h3>tinyurl.com/acadia-import</h3> and hit enter</li>
+					</ul>
+				</section>
+
+				<section>
+					<p>Let's highlight the Batting Average column:</p>
+					<pre><code>
+$('#teams_standard_batting td:nth-child(19)').css('background-color','yellow')
+					</code></pre>
+				</section>
+
+				<section>
+					<p>Now, use our iterative method from before to turn that column into a heatmap:</p>
+					<pre><code>var column = $('#teams_standard_batting td:nth-child(19)')
+max = _.max(column.map(function(){ return parseFloat($(this).text()) }))
+min = _.min(column.map(function(){ return parseFloat($(this).text()) }))
+
+  var color = d3.scale.linear()
+    .domain([min, max])
+    .range(["#c33", "#0fc"]);
+
+column.map(function(iter,cell){
+  return $(cell).css('background-color', color(parseFloat($(cell).text())))
+})
+					</code></pre>
+					<p>Pre-made snippet for you: <h3><a href="http://tinyurl.com/acadia-gist3" target="_blank">tinyurl.com/acadia-gist3</a></h3></p>
+				</section>
+
+				<section>
+				<p>Let's make a bar chart!</p>
+				<ul>
+					<li>Since we already know the "max" value, we can assign that a max-width bar.</li>
+					<li>Every other value will be its ratio of that max bar's width</li>
+				</ul>
+					<pre><code>var column = $('#teams_standard_batting td:nth-child(13)')
+max = _.max(column.map(function(){ return parseFloat($(this).text()) }))
+min = _.min(column.map(function(){ return parseFloat($(this).text()) }))
+barwidth = 250
+
+column.map(function(iter,cell){
+  $(cell).prepend('<div class="bar"></div>');
+  $(cell).children('.bar').css('width', parseFloat($(cell).text()) / max * barwidth )
+  var color = d3.scale.linear()
+    .domain([min, max])
+    .range(["#c33", "#0fc"]);
+  $(cell).children('.bar').css('background-color', color(parseFloat($(cell).text())))
+})
+
+$(column).css('text-align', 'left')
+$('.bar').css('height', '10px').css('float', 'left')
+					</code></pre>
+					<p>Pre-made snippet for you: <h3><a href="http://tinyurl.com/acadia-gist4" target="_blank">tinyurl.com/acadia-gist4</a></h3></p>
+        </section>
+        
+        <section>
+          <h2>6. Notebooks as a Computational Essay</h2>
+          <p>Head over to <a href="https://beta.observablehq.com/@philrenaud" target="_blank">beta.observablehq.com/@philrenaud</a> and follow along with the notebook</p>
+        </section>
+        
+        <section>
+          <h2>7. Introduction to Network Science</h2>
+          <p>Head over to <a href="https://ncase.me/crowds" target="_blank">ncase.me/crowds</a> and follow along with the interactive</p>
+        </section>
+        
+        <section>
+          <h2>8. A practical introduction to Gephi</h2>
+          <p>If you haven't already done so, head over to <a href="https://gephi.org/" target="_blank">gephi.org</a> and download a free copy</p>
+        </section>
+        
+        <section>
+          <p>Gephi is a tool to visualize and explore network graph data.</p>
+          <ul>
+            <li class="fragment">
+              Lots of things can be networks! Any list of things ("nodes") with a relationship to one another (for example, people who follow one another on Twitter; words adjacent to one another in a book)
+            </li>
+            <li class="fragment">
+              Let's grab a list of the characters in Game of Thrones who share a scene <a href="https://github.com/melaniewalsh/sample-social-network-datasets/tree/master/sample-datasets/game-of-thrones" target="_blank">github.com/melaniewalsh/sample-social-network-datasets/tree/master/sample-datasets/game-of-thrones</a>. Download it somewhere you can access it.
+            </li>
+          </ul>
+        </section>
+            
+				<section>
+					<ul>
+            <li>Open Gephi and <strong>Open</strong> <code>got-network.graphml</code></li>
+            <li class="fragment">Options for Undirected, Directed, or Mixed graphs</li>
+            <li class="fragment">Number of Edges and Nodes listed</li>
+					</ul>
+				</section>
+
+            
+				<section>
+            <ul>
+              <li>Observe the 3 main views of Gephi: Overview, Data Laboratory, and Preview</li>
+              <li class="fragment">In Overview, let's open our <strong>Statistics</strong> panel and segment our nodes with <strong>Modularity</strong></li>
+              <li class="fragment">Next, we'll change the appearance of our nodes and edges under the <strong>Appearance</strong> panel</li>
+              <li class="fragment">Finally, let's explore some of the built-in layouts with the <strong>Layouts</strong> panel; starting with Force Atlas 2, and Yifan Hu</li>
+            </ul>
+        </section>
 
         <section>
           <h3>Thanks!</h3>
@@ -546,13 +674,6 @@
           <p>Github Repo: <a href="https://github.com/philrenaud/datavis-workshop" target="_blank">github.com/philrenaud/datavis-workshop</a></p>
         </section>
 
-        <section>
-          <h3>Bonus links:</h3>
-          <p><a target="_blank" href="https://medium.com/@jugoncalves/functional-programming-should-be-your-1-priority-for-2015-47dd4641d6b9">Functional Programming should be your #1 priority for 2015</a></p>
-          <p><a target="_blank" href="https://learningwithdata.wordpress.com/2015/02/06/quick-guide-to-making-an-interactive-d3-map/">Quick Guide to Making an Interactive D3 map</a></p>
-          <p><a target="_blank" href="https://github.com/WhiteHouse/2016-budget-data">Data for the The President's Fiscal Year 2016 Budget</a></p>
-          <p><a target="_blank" href="https://github.com/fivethirtyeight/data">538's Open Data</a></p>
-        </section>
 			</div>
 
 		</div>
@@ -659,23 +780,6 @@
 			});
 
 		</script>
-
-  <!-- jQuery -->
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-  <script>window.jQuery || document.write('<script src="/scripts/libs/jquery-2.0.3.min.js"><\/script>')</script>
-
-  <!-- Datavis -->
-  <script src="/scripts/libs/d3.v3.min.js" charset="utf-8"></script>
-  <script src="/scripts/libs/c3.js"></script>
-    <link rel="stylesheet" href="/assets/css/c3.css">    
-
-  <!-- Tools: Time and Data -->
-  <script src="/scripts/libs/moment.min.js"></script>
-  <script src="/scripts/libs/underscore-min.js"></script>
-
-  <!-- TODO: Grunt'd -->
-  <script src="/scripts/app.js"></script>
-
 
 	</body>
 </html>
